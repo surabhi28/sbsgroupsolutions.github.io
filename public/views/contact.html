@@ -1,0 +1,77 @@
+
+		<!-- content 
+			================================================== -->
+		<div id="content" ng-controller="contactCtrl">
+  <!-- Page Banner -->
+  <div class="page-banner" style="margin-bottom:40px ;"">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <ul class="page-tree">
+        <li><a ui-sref="main">Home</a></li>
+        <li><a ui-sref="contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Map box -->
+  <div style="margin-bottom:40px">
+    <div style="width: 100%">
+     <!--  <iframe width="100%" height="600" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=600&amp;hl=en&amp;q=6%2F2%20Murai%20Maholla%20Indore%20Madhya%20Pradesh%20India+(SBS%20GROUP%20i-TECH%20SOLUTIONS)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.maps.ie/create-google-map/">Add Google Map to website</a> by <a href="http://www.maps.ie/">Maps.ie</a></iframe> -->
+     <iframe ma width="1280" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVxsTIDn9YjkRCYCUPzGEh2s&key=AIzaSyCGvn2Im0qQz7UbN-HFJFMXxFMjQwpiK8w" allowfullscreen></iframe>
+    </div>
+    <br />
+  </div>
+  <!-- contact box -->
+  <div class="contact-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-information">
+            <h3>Contact information</h3>
+            <ul class="contact-information-list">
+              <li><a class="address" href="#"><i class="fa fa-home"></i><span>6/2 Murai Maholla Indore </span><span> Madhya Pradesh India.</span></</li>
+              <li><a class="phone" href="tel:917314258249"><i class="fa fa-phone"></i><span>Phone: +91-731-4258249</span></a></li>
+              <li><a class="phone" href="tel:9826450971"><i class="fa fa-mobile"></i><span> Mob: +91-9826450971 </span></a></li>
+              <li><a class="mail" href="mailto:mail@sbsgroupsolutions.com"><i class="fa fa-envelope"></i><span>mail@sbsgroupsolutions.com</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          <h3>Contact us</h3>
+          <div class="message" style="color:green;">
+                      </div>
+          <div class="error" style="color:red;">
+                      </div>
+          </br>
+		  <div id="contactus">
+          <form id="contact-form" >
+
+            <div class="text-input">
+              <div class="float-input">
+                <input name="name" id="name" type="text" placeholder="name" required="" data-constraints="@Required @JustLetters">
+                <span><i class="fa fa-user"></i></span> </div>
+              <div class="float-input">
+                <input name="email" id="txtEmail" type="text" id="txtEmail" class="float-input" placeholder="email"  name="email" required="" data-constraints="@Required @Email">
+                <span><i class="fa fa-envelope"></i></span> </div>
+            </div>
+            <div class="textarea-input">
+              <textarea name="message" id="message" placeholder="message" required="" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+              <span><i class="fa fa-comment"></i></span> </div>
+            <div id="msg" class="message"></div>
+			
+			     Enter Image Text
+                <input name="captcha" type="text" id="pass1">
+                  <div style="color:red;"><img src="http://sbsgroupsolutions.com/home/captcha_view"/>  </div>
+            <input type="submit" ng-click="submit()" value="Submit">
+          </form>
+		  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		<!-- End content -->
+
+
+		

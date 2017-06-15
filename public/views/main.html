@@ -1,0 +1,791 @@
+
+<style>
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.row-fluid{
+     white-space: nowrap;
+      overflow: auto;
+      float: right;
+}
+.row-fluid .col-md-4{
+     display: inline-block;
+     float: none;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script>(function(d, s, id) {
+
+      var js, fjs = d.getElementsByTagName(s)[0];
+
+      if (d.getElementById(id)) return;
+
+      js = d.createElement(s); js.id = id;
+
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+
+      fjs.parentNode.insertBefore(js, fjs);
+
+    }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+<div ng-controller="mainCtrl">
+  
+
+<div id="slider" >
+
+  <div class="fullwidthbanner-container">
+
+    <div class="fullwidthbanner">
+
+      <ul>
+
+        <!-- THE third SLIDE -->
+
+        <li data-transition="3dcurtain-vertical" data-slotamount="10" data-masterspeed="300"> <img alt="" src="images/upload/slider-revolution/slider1.jpg" >
+
+          <!-- THE CAPTIONS IN THIS SLDIE -->
+
+          <div class="caption large_text sfb"
+
+                 data-x="25"
+
+                 data-y="100"
+
+                 data-speed="600"
+
+                 data-start="1200"
+
+                 data-easing="easeOutExpo" data-end="7000" data-endspeed="300" data-endeasing="easeInSine" style="color:#778896; font-size:32px; font-weight:bold; line-height:36px; padding-bottom:10px; margin-bottom:10px;" >Mobile Application Development</div>
+
+          <div class="caption big_white sft stt"
+
+                 data-x="25"
+
+                 data-y="147"
+
+                 data-speed="500"
+
+                 data-start="1400"
+
+                 data-easing="easeOutExpo" data-end="7100" data-endspeed="300" data-endeasing="easeInSine" style="color:#006DB2;" >Native iOS and Android Development</div>
+
+          <div class="caption modern_medium_fat sft stt"
+
+                 data-x="25"
+
+                 data-y="194"
+
+                 data-speed="500"
+
+                 data-start="1600"
+
+                 data-easing="easeOutExpo" data-end="7200" data-endspeed="300" data-endeasing="easeInSine" style="color:#006DB2;" >Solutions for B2E, B2B and B2C</div>
+
+          <div class="caption small_text sft stt"
+
+                 data-x="25"
+
+                 data-y="225"
+
+                 data-speed="500"
+
+                 data-start="1900"
+
+                 data-easing="easeOutExpo" data-end="7300" data-endspeed="300" data-endeasing="easeInSine" style="color:#006DB2;" >Porting apps from one platform to another</div>
+
+          <div class="caption small_text sft stt"
+
+                 data-x="25"
+
+                 data-y="225"
+
+                 data-speed="500"
+
+                 data-start="1900"
+
+                 data-easing="easeOutExpo" data-end="7300" data-endspeed="300" data-endeasing="easeInSine" style="color:#006DB2;" >Porting apps from one platform to another</div>
+
+          <div class="caption randomrotate"
+
+                 data-x="25"
+
+                 data-y="300"
+
+                 data-speed="600"
+
+                 data-start="2200"
+
+                 data-easing="easeOutExpo" data-end="7350" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/upload/slider-revolution/ios-icon.png" alt="Image 1"></div>
+
+          <div class="caption randomrotate"
+
+                 data-x="135"
+
+                 data-y="300"
+
+                 data-speed="600"
+
+                 data-start="2700"
+
+                 data-easing="easeOutExpo" data-end="7450" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/upload/slider-revolution/android-icon.png" alt="Image 2"></div>
+
+          <div class="caption randomrotate"
+
+                 data-x="245"
+
+                 data-y="300"
+
+                 data-speed="600"
+
+                 data-start="3100"
+
+                 data-easing="easeOutExpo" data-end="7550" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/upload/slider-revolution/css3-icon.png" alt="Image 3"></div>
+
+          <div class="caption randomrotate"
+
+                 data-x="355"
+
+                 data-y="300"
+
+                 data-speed="600"
+
+                 data-start="3500"
+
+                 data-easing="easeOutExpo" data-end="7650" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/upload/slider-revolution/html5-icon.png" alt="Image 4"></div>
+
+          <div class="caption randomrotate"
+
+                 data-x="680"
+
+                 data-y="40"
+
+                 data-speed="600"
+
+                 data-start="4000"
+
+                 data-easing="easeOutExpo" data-end="7800" data-endspeed="300" data-endeasing="easeInSine" ><img src="images/upload/slider-revolution/iphone-android.png" alt="Image 6"></div>
+
+        </li>
+
+        <li data-transition="turnoff" data-slotamount="10" data-masterspeed="300">
+
+          <!-- THE MAIN IMAGE IN THE second SLIDE -->
+
+          <img alt="" src="images/upload/slider-revolution/slider3.jpg" width="320px"  >
+
+          <!-- THE CAPTIONS IN THIS SLDIE -->
+
+          <div class="caption randomrotate"
+
+                 data-x="0"
+
+                 data-y="105"
+
+                 data-speed="600"
+
+                 data-start="1200"
+
+                 data-easing="easeOutExpo" data-end="7100" data-endspeed="300" data-endeasing="easeInSine" > <img src="images/upload/slider-revolution/slider3-inner.png" alt="Image 1"></div>
+
+          <div class="caption big_white sft stt slide3-style slide2-heading"
+
+                 data-x="638"
+
+                 data-y="126"
+
+                 data-speed="500"
+
+                 data-start="1500"
+
+                 data-easing="easeOutExpo" data-end="7300" data-endspeed="300" data-endeasing="easeInSine" > Web Application Development </div>
+
+          <div class="caption modern_medium_fat sft stt slide3-style slide2-list"
+
+                 data-x="638"
+
+                 data-y="216"
+
+                 data-speed="500"
+
+                 data-start="1700"
+
+                 data-easing="easeOutExpo" data-end="7500" data-endspeed="300" data-endeasing="easeInSine" >
+
+            <ul class="slider-list">
+
+              <li>Customized Ecommerce Solutions with Payment Gateway</li>
+
+              <li>Responsive and Cross Bowser Compatible</li>
+
+              <li>Cloud Development</li>
+
+              <li>Content Management Systems and Blogging Solutions</li>
+
+              <li>Optimized for Latest SEO trends</li>
+
+            </ul>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+<!-- End slider -->
+
+<!-- content 
+
+      ================================================== -->
+
+
+<div id="content">
+
+  <div class="technology">
+
+    <div class="fullwidth-box">
+
+      <div class="container">
+
+        <ul>
+
+          <li> <i class="fa fa-apple"></i></li>
+
+          <li> <i class="fa fa-android"></i></li>
+
+          <li> <i class="php"></i></li>
+
+          <li> <i class="fa fa-wordpress"></i></li>
+
+          <li> <i class="laravel"></i></li>
+
+          <li> <i class="codeigniter"></i></li>
+
+          <li> <i class="magento"></i></li>
+
+          <li> <i class="fa fa-joomla"></i></li>
+
+          <li> <i class="fa fa-html5"></i></li>
+
+          <li><i class="fa fa-css3"></i></li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+   <div class="fullwidth-box">
+
+    <div class="container">
+
+      <!-- services-box -->
+
+      <div class="services-box">
+
+        <div class="row">
+
+          <div class="col-md-4">
+
+            <div class="services-post"> <a class="services-icon1" href="#"><i><img src="images/rating-star.png" /></i></a>
+
+              <div class="services-post-content">
+
+                <p> Providing simple and comprehensive IT solutions to our clients.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+
+            <div class="services-post"> <a class="services-icon2" href="#"><i class="fa fa-desktop"></i></a>
+
+              <div class="services-post-content">
+
+                <p> Treating clients as our own partners and support them to meet their own business goals.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+
+            <div class="services-post"> <a class="services-icon3" href="#"><i><img src="images/icon.png" /></i></a>
+
+              <div class="services-post-content">
+
+                <p> Delivering cost effective, high standard and time bound services.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- about box-->
+
+      <div class="about-box">
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <div class="about-us-text">
+
+              <h3>Who we are</h3>
+
+              <div class="innner-box">
+
+
+                <p><span >Established in 2010, SBS Group i-Tech Solutions Pvt. Ltd. is involved in providing wide range of services including Mobile application development, Customized Software Development, Website Designing and development, Web Application Development, IT Consultancy and Application maintenance Jobs. With offices in Bhopal and Indore, we are dedicated to provide excellent IT solutions to our prestigious clients worldwide. We make a profound dedication to 
+
+the success of our customers. We always look to press on the demanding conventions and creative limitations. It would not be considered as a dictum if we say "Technology is our Passion". Our dedicated and talented team of designers, programmers, user-experience specialists, strategists, and project managers are passionate about the level of service and quality of work they deliver. This results in well-executed mobile apps and websites, happy clients, and lasting relationships. Personalization and professionalism is what makes SBS Group different.</span> </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          
+
+          
+
+          <div class="col-md-6">
+
+       <h3>Our Services</h3>
+
+     
+     <div ng-repeat="s in services" ng-click="accordion.current = s.servicename">
+      <button class="accordion">
+      {{s.servicename}}</button>
+      <div  ng-show="accordion.current == s.servicename" style="color: #666;">
+        <p class="panel">{{s.short_desc}}</p>
+      </div>
+    </div>
+
+        
+                </div>
+
+      
+
+      
+
+       </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- client-testimonials -->
+
+  <div class="fullwidth-box testimonials-box">
+
+    <div class="container">
+
+      <h3><span>Client Testimonials</span></h3>
+
+    </div>
+
+
+<div class="container">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <!-- <ol class="carousel-indicators">
+        <li data-target="#myCarousel" ng-repeat="test in tests" ng-class="{active: ($index === 0)}" data-slide-to="$index"></li>
+      </ol> -->
+      <ul class="carousel-inner">
+        <li ng-class="{item: true, active: ($index === 0)}" ng-repeat="test in tests">
+         <div class="message-content" style="padding: 20px 40px;">
+                               
+            <p> {{test.testimonial}}</p>
+
+           <div class="rating"><h6 class="client-name">{{test.clientname}}</h6></div>
+
+          </div>
+
+          
+        </li>
+      </ul>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+
+   
+  </div>
+</div>
+
+
+   
+  </div>
+
+   <!-- fullwidthsection -->
+
+  <div class="fullwidth-box main-features">
+
+    <div class="container">
+
+<div class="client-section" style="margin-bottom:40px; padding-bottom:40px;">
+
+        <h3> Our Success Partner</h3>
+
+        <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+
+          <!-- Wrapper for slides -->
+
+          <div class="carousel-inner">
+
+            <div class="item active">
+
+              <ul class="clients-list">
+
+                <li><a target="_blank" href="http://bookmyseats.co.in/"><img alt="" src="images/bookmysheat-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://holbrookgranite.com/"><img alt="" src="images/holbrook.png"></a></li>
+
+                <li><a target="_blank" href="http://www.wonderweb.ae/"><img alt="" src="images/wonderweb-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://www.manchestermela.co.uk/"><img alt="" src="images/menchestermela-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://stonemakeover.com/"><img alt="" src="images/stonemakeover-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://idestproductions.com/"><img alt="" src="images/idest-logo.png"></a></li>
+
+              </ul>
+
+            </div>
+
+            <div class="item">
+
+              <ul class="clients-list">
+
+                <li><a target="_blank" href="http://taskgram.com/"><img alt="" src="images/taskgram-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://www.eflashapps.com/"><img alt="" src="images/flash-logo.png"></a></li>
+
+                <li><a target="_blank" href="https://lcahgoa.in/"><img alt="" src="images/rajhans-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://www.inventiveapp.com/"><img alt="" src="images/inventivapp-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://www.abstractartlesson.com/"><img alt="" src="images/abstract-logo.png"></a></li>
+
+                <li><a target="_blank" href="http://danarosedesign.com/"><img alt="" src="images/danarose-logo.png"></a></li>
+
+              </ul>
+
+            </div>
+
+          </div>
+       <!-- Controls -->
+
+          <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+
+      </div>
+    </div>
+
+  </div>
+
+   <!-- staff-box -->
+ <div class="fullwidth-box getintouch">
+  <div class="container">
+        <div class="row">
+
+          <div class="col-md-4 email">
+
+            <div class="contact-get">
+
+              <div class="contact-get-content">
+                <p> <i class="fa fa-envelope-o hi-icon" aria-hidden="true"></i><a href="mailto: mail@sbsgroupsolutions.com" style="text-decoration: none;">E-Mail Us</a></p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-4 call">
+
+            <div class="contact-get">
+
+              <div class="contact-get-content">
+               <p><i class="fa fa-mobile hi-icon" aria-hidden="true"></i><a href="tel:+919826450971" style="text-decoration: none;">Call Us</a></p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-4 touch">
+
+            <div class="contact-get">
+
+              <div class="contact-get-content">
+                <p><i class="fa fa-skype hi-icon" aria-hidden="true"></i><a href="skype: sbsgroupsolutions?call" style="text-decoration: none;">Get In Touch</a><p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+  </div>
+ 
+    <div class="fullwidth-box">
+
+    
+      <!-- recent-works-box -->
+
+      <div class="recent-works">
+
+        <h3>LATEST PROJECTS</h3>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+          <!-- Wrapper for slides -->
+
+          <div class="carousel-inner">
+
+            <div class="item active">
+            <div class="row-fluid">
+              
+        
+              <div class="col-md-4"  ng-repeat="x in ports">
+
+                <div id="{{x._id}}" class="w3-modal">
+                   <div class="w3-modal-content">
+                   <div class="w3-container">
+                     <span rel="{{x._id}}" onclick="hideBox(this)" class="w3-button w3-display-topright">&times;</span>
+                      <img src="{{x.imagepath}}{{x.fullimagename}}">
+                  </div>
+                 </div>
+                </div>
+
+                  <div class="work-post">
+
+                    <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.imagename}}">
+
+                      <div class="hover-box"> <a class="zoom">
+                        <i rel="{{x._id}}" onclick="showBox(this)" class="fa fa-plus-circle"></i></a> 
+
+                        <a class="page"  target="_blank"  href="{{x.link}}"><i class="fa fa-arrow-circle-right"></i></a> 
+                      </div>
+
+                    </div>
+                  
+
+                    <div class="work-post-content">
+
+                      <h2>{{x.portfolioname}}</h2>
+
+                      <span>{{x.type}} Development</span> 
+
+                    </div>
+                       
+
+
+                  </div>
+
+                  
+
+                  </div>
+                
+
+                                             
+
+                   </div>
+
+                </div>
+                       
+                </div>
+                
+          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"></a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"></a> 
+                    
+                </div>
+       
+              </div>
+            
+
+<!--      
+           </div>
+ -->
+      </div>
+
+
+
+
+
+
+</div>
+<script>
+    function showBox(id){
+        document.getElementById(id.getAttribute('rel')).style.display='block';
+    }
+    function hideBox(id){
+        document.getElementById(id.getAttribute('rel')).style.display='none';
+    }
+    </script>
+
+<script type="text/javascript">
+
+    var tpj=jQuery;
+    tpj.noConflict();
+
+    tpj(document).ready(function() {
+
+    if (tpj.fn.cssOriginal!=undefined)
+      tpj.fn.css = tpj.fn.cssOriginal;
+
+      var api = tpj('.fullwidthbanner').revolution(
+        {
+          delay:8000,
+          startwidth:1170,
+          startheight:500,
+
+          onHoverStop:"off",            // Stop Banner Timet at Hover on Slide on/off
+
+          thumbWidth:100,             // Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+          thumbHeight:50,
+          thumbAmount:3,
+
+          hideThumbs:0,
+          navigationType:"none",        // bullet, thumb, none
+          navigationArrows:"solo",        // nexttobullets, solo (old name verticalcentered), none
+
+          navigationStyle:"round",        // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+
+
+          navigationHAlign:"center",        // Vertical Align top,center,bottom
+          navigationVAlign:"bottom",          // Horizontal Align left,center,right
+          navigationHOffset:30,
+          navigationVOffset: 40,
+
+          soloArrowLeftHalign:"left",
+          soloArrowLeftValign:"center",
+          soloArrowLeftHOffset:0,
+          soloArrowLeftVOffset:0,
+
+          soloArrowRightHalign:"right",
+          soloArrowRightValign:"center",
+          soloArrowRightHOffset:0,
+          soloArrowRightVOffset:0,
+
+          touchenabled:"on",            // Enable Swipe Function : on/off
+
+
+          stopAtSlide:-1,             // Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+          stopAfterLoops:-1,            // Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+
+          hideCaptionAtLimit:0,         // It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+          hideAllCaptionAtLilmit:0,       // Hide all The Captions if Width of Browser is less then this value
+          hideSliderAtLimit:0,          // Hide the whole slider, and stop also functions if Width of Browser is less than this value
+
+
+          fullWidth:"on",
+
+          shadow:1                //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+
+        });
+
+
+        // TO HIDE THE ARROWS SEPERATLY FROM THE BULLETS, SOME TRICK HERE:
+        // YOU CAN REMOVE IT FROM HERE TILL THE END OF THIS SECTION IF YOU DONT NEED THIS !
+          api.bind("revolution.slide.onloaded",function (e) {
+
+
+            jQuery('.tparrows').each(function() {
+              var arrows=jQuery(this);
+
+              var timer = setInterval(function() {
+
+                if (arrows.css('opacity') == 1 && !jQuery('.tp-simpleresponsive').hasClass("mouseisover"))
+                  arrows.fadeOut(300);
+              },3000);
+            })
+
+            jQuery('.tp-simpleresponsive, .tparrows').hover(function() {
+              jQuery('.tp-simpleresponsive').addClass("mouseisover");
+              jQuery('body').find('.tparrows').each(function() {
+                jQuery(this).fadeIn(300);
+              });
+            }, function() {
+              if (!jQuery(this).hasClass("tparrows"))
+                jQuery('.tp-simpleresponsive').removeClass("mouseisover");
+            })
+          });
+        // END OF THE SECTION, HIDE MY ARROWS SEPERATLY FROM THE BULLETS
+      });
+  </script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
