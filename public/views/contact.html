@@ -15,7 +15,7 @@
   <!-- Map box -->
   <div style="margin-bottom:40px">
     <div style="width: 100%">
-     <!--  <iframe width="100%" height="600" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=600&amp;hl=en&amp;q=6%2F2%20Murai%20Maholla%20Indore%20Madhya%20Pradesh%20India+(SBS%20GROUP%20i-TECH%20SOLUTIONS)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=A&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="http://www.maps.ie/create-google-map/">Add Google Map to website</a> by <a href="http://www.maps.ie/">Maps.ie</a></iframe> -->
+    
      <iframe ma width="1280" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVxsTIDn9YjkRCYCUPzGEh2s&key=AIzaSyCGvn2Im0qQz7UbN-HFJFMXxFMjQwpiK8w" allowfullscreen></iframe>
     </div>
     <br />
@@ -44,26 +44,37 @@
                       </div>
           </br>
 		  <div id="contactus">
-          <form id="contact-form" >
+          <form id="contact-form" name="userForm"  novalidate>
 
             <div class="text-input">
+              <div class="float-input ">
+               <input type="text" id="name" class="form-control" placeholder="name" name="name" ng-model="name" required >
+                  <span><i class="fa fa-user"></i></span>
+                <p ng-show="userForm.name.$error.required">Username is required.</p>
+               </div>
               <div class="float-input">
-                <input name="name" id="name" type="text" placeholder="name" required="" data-constraints="@Required @JustLetters">
-                <span><i class="fa fa-user"></i></span> </div>
-              <div class="float-input">
-                <input name="email" id="txtEmail" type="text" id="txtEmail" class="float-input" placeholder="email"  name="email" required="" data-constraints="@Required @Email">
-                <span><i class="fa fa-envelope"></i></span> </div>
+                <input  type="email"  class="form-control" placeholder="        email" name="email" ng-model="email" required>
+                <span><i class="fa fa-envelope"></i></span>
+               <p ng-show="userForm.email.$error.required">Email is required.</p>
+              <p ng-show="userForm.email.$error.email">Invalid email address.</p>
+
+ </div>
             </div>
             <div class="textarea-input">
-              <textarea name="message" id="message" placeholder="message" required="" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-              <span><i class="fa fa-comment"></i></span> </div>
-            <div id="msg" class="message"></div>
+              <textarea name="message" id="message" class="form-control" ng-model="message" placeholder="message" required  ng-minlength="20" ng-maxlength="999999"></textarea>
+              <span><i class="fa fa-comment"></i></span>
+               <p ng-show="userForm.message.$error.required">Message is required.</p>
+               <p ng-show="userForm.message.$error.minlength" >Username is too short.</p>
+            <p ng-show="userForm.message.$error.maxlength" >Username is too long.</p>
+             </div>
+            <!-- <div id="msg" class="message"></div>
 			
 			     Enter Image Text
-                <input name="captcha" type="text" id="pass1">
+                <input name="captcha" type="text" ng-model="captcha" id="pass1">
                   <div style="color:red;"><img src="http://sbsgroupsolutions.com/home/captcha_view"/>  </div>
-            <input type="submit" ng-click="submit()" value="Submit">
-          </form>
+             -->
+                     <button type="submit" ng-click="submit()" style="position: absolute; right: 14px;" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+  </form>
 		  </div>
         </div>
       </div>
@@ -71,7 +82,4 @@
   </div>
 </div>
 
-		<!-- End content -->
-
-
-		
+	

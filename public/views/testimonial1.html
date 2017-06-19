@@ -29,6 +29,13 @@ ul#pager li {
     display:inline;
 }
 </style>
+<script type="text/javascript">
+  var $ = jQuery.noConflict();
+	$(".navi").click( function() {
+   $(window).scrollTop(0);
+ });
+
+</script>
 
 
 <div id="content" ng-controller="testimonialCtrl">
@@ -72,13 +79,13 @@ ul#pager li {
                         <div class="pagination-div pagination-list" ng-show="names.length">
                            <ul id="pager">
                                 <li>
-                                    <button type="button"  ng-disabled="curPage == 0" ng-click="curPage=curPage-1"><i class="fa fa-chevron-left" style="color: white;" aria-hidden="true"></i></button>
+                                    <button class="navi" type="button"  ng-disabled="curPage == 0" ng-click="curPage=curPage-1"><i class="fa fa-chevron-left" style="color: white;" aria-hidden="true"></i></button>
                                 </li>
                                 <li>
                                     <span>{{curPage + 1}} </span>
                                 </li>
                                 <li>
-                                    <button type="button" ng-disabled="curPage >= data.length/pageSize - 1" ng-click="curPage = curPage+1"><i class="fa fa-chevron-right" aria-hidden="true" style="color:white;"></i> </button>
+                                    <button  class="navi" type="button" ng-disabled="curPage >= names.length/pageSize - 1" ng-click="curPage = curPage+1"><i class="fa fa-chevron-right" aria-hidden="true" style="color:white;"></i> </button>
                                 </li>
                             </ul>
                         </div>

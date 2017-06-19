@@ -1,52 +1,5 @@
 
-<style>
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
 
-button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
-}
-
-button.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2212";
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
-
-.row-fluid{
-     white-space: nowrap;
-      overflow: auto;
-      float: right;
-}
-.row-fluid .col-md-4{
-     display: inline-block;
-     float: none;
-}
-</style>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script>(function(d, s, id) {
@@ -446,11 +399,18 @@ the success of our customers. We always look to press on the demanding conventio
 
 <div class="container">
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCaro" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <!-- <ol class="carousel-indicators">
-        <li data-target="#myCarousel" ng-repeat="test in tests" ng-class="{active: ($index === 0)}" data-slide-to="$index"></li>
+        <li data-target="#myCaro" ng-repeat="test in tests" ng-class="{active: ($index === 0)}" data-slide-to="$index"></li>
       </ol> -->
+     <!--   <ol class="carousel-indicators">
+      <li data-target="#myCaro" data-slide-to="0" class="active"></li>
+      <li data-target="#myCaro" data-slide-to="1"></li>
+      <li data-target="#myCaro" data-slide-to="2"></li>
+      <li data-target="#myCaro" data-slide-to="3"></li>
+      <li data-target="#myCaro" data-slide-to="4"></li>
+    </ol> -->
       <ul class="carousel-inner">
         <li ng-class="{item: true, active: ($index === 0)}" ng-repeat="test in tests">
          <div class="message-content" style="padding: 20px 40px;">
@@ -464,9 +424,20 @@ the success of our customers. We always look to press on the demanding conventio
           
         </li>
       </ul>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      
+     
+     
     </div>
+     <ul id="pager" style="margin-top: 15px">
+                                <li>
+                                    <button href="#myCaro" data-slide="prev" ><i class="fa fa-angle-left"  style="color: white;" aria-hidden="true"></i></button>
+                                </li>
+                                
+                                <li>
+                                    <button href="#myCaro" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true" style="color:white;"></i> </button>
+                                </li>
+                            </ul>
+
 
    
   </div>
@@ -486,7 +457,7 @@ the success of our customers. We always look to press on the demanding conventio
 
         <h3> Our Success Partner</h3>
 
-        <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
           <!-- Wrapper for slides -->
 
@@ -533,9 +504,19 @@ the success of our customers. We always look to press on the demanding conventio
             </div>
 
           </div>
+          <ul id="pager" style="top:-40px;right:-50px; position:absolute;">
+                                <li>
+                                    <button href="#myCarousel" data-slide="prev" ><i class="fa fa-angle-left"  style="color: white;" aria-hidden="true"></i></button>
+                                </li>
+                                
+                                <li>
+                                    <button href="#myCarousel" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true" style="color:white;"></i> </button>
+                                </li>
+                            </ul>
+
        <!-- Controls -->
 
-          <a class="left carousel-control" href="#carousel-example-generic2" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#carousel-example-generic2" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+        
 
       </div>
     </div>
@@ -605,7 +586,7 @@ the success of our customers. We always look to press on the demanding conventio
 
             <div class="item active">
             <div class="row-fluid">
-              
+               
         
               <div class="col-md-4"  ng-repeat="x in ports">
 
@@ -655,10 +636,14 @@ the success of our customers. We always look to press on the demanding conventio
                 </div>
                        
                 </div>
-                
+                      
+                      
+
           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"></a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"></a> 
+    
                     
                 </div>
+
        
               </div>
             

@@ -1,19 +1,51 @@
 <style type="text/css">
   
-  ul#pager li {
-    display:inline;
-}
-ul#pager button{
-  border: none; background-color: #00ADEF;  border-radius: 5px;
-}
+
 a.zoom{
   right:50%;margin-right:30px
   }
 
+.filter-button
+{
+    font-size: 18px;
+    color:#7E7E7E;
+   
+    text-align: center;
+    
+}
+.filter-button:hover
+{
+    font-size: 18px;
+    /*border: 1px solid #42B32F;
+    border-radius: 5px;*/
+    text-align: center;
+   
+    background-color: #00ADEF;
+ 
+}
+.filter-button.active
+{
+    background-color: #00ADEF;
+    color: white;
+}
+ul li{
+  display: inline;
+}
+
+
 
 </style>
 
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <script>
+    function showBox(id){
+        document.getElementById(id.getAttribute('rel')).style.display='block';
+    }
+    function hideBox(id){
+        document.getElementById(id.getAttribute('rel')).style.display='none';
+    }
+    </script>
+<!-- <script type="text/javascript" src="js/script.js"></script> -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div id="content" ng-controller="portfolioCtrl">
 <!-- Page Banner -->
 <div class="page-banner">
@@ -25,43 +57,54 @@ a.zoom{
     </ul>
   </div>
 </div>
-
-<div class="portfolio-box with-4-col">
+<div class="portfolio-box with-4-col" >
   <div class="container">
-    <ul class="filter">
-      <li><a href="#" class="active" data-filter="*"><i class="fa fa-th"></i>Show All</a></li>
-      <li><a href="#" data-filter=".website">Website</a></li>
-      <li><a href="#" data-filter=".mobile">Mobile Site</a></li>
-      <li><a href="#" data-filter=".android">ANDROID APP</a></li>
-      <li><a href="#" data-filter=".ios">IOS APP</a></li>
-    </ul>
-   <div class="portfolio-container" ng-repeat="x in data | pagination: curPage * pageSize | limitTo: pageSize" id="container">
 
 
-      <div id="{{x._id}}" class="w3-modal" style="margin-top: 30px; opacity: 0.7;">
-    <div class="w3-modal-content">
-      <div class="w3-container">
-        <span rel="{{x._id}}" onclick="hideBox(this)" class="w3-button w3-display-topright">&times;</span>
-        <img src="{{x.imagepath}}{{x.fullimagename}}">
-      </div>
-    </div>
-  </div>   
-      
-      <div class="work-post website " >
-         <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.fullimagename}}">
-          <div class="hover-box"> 
-          <a class="zoom" ><i rel="{{x._id}}" onclick="showBox(this);" class="fa fa-plus-circle"></i></a> 
-         
 
-          <a class="page" target="_blank" href="{{x.link}}"><i class="fa fa-arrow-circle-right"></i></a>
-           </div>
-        </div>
-        <div class="work-post-content">
-          <h2>{{x.portfolioname}}</h2>
-          <!--<span>short description of portfolio item</span>-->
-         </div>
-      </div>
-      </div>
+   <ul>
+            <li><a class="btn btn-default filter-button active" data-filter="all"><i class="fa fa-th"></i> Show All</a></li>
+            <li><a class="btn btn-default filter-button" data-filter="website">WEBSITE</a></li>
+            <li><a class="btn btn-default filter-button" data-filter="android">ANDROID APP</a></li>
+            <li><a class="btn btn-default filter-button" data-filter="mobile">MOBILE APP</a></li>
+            <li><a class="btn btn-default filter-button" data-filter="ios">IOS APP</a></li>
+        </ul>
+        </br>
+   <div class="portfolio-container" ng-repeat="x in data | pagination: curPage * pageSize | limitTo: pageSize">
+
+                <div id="{{x._id}}" style="margin-top: 30px;" class="w3-modal">
+                   <div class="w3-modal-content">
+                   <div class="w3-container">
+                     <span rel="{{x._id}}" onclick="hideBox(this)" class="w3-button w3-display-topright">&times;</span>
+                      <img src="{{x.imagepath}}{{x.fullimagename}}">
+                  </div>
+                 </div>
+                </div>
+
+                  <div class="filter {{x.type}} work-post col-lg-4 col-md-4 col-sm-4">
+
+                    <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.imagename}}">
+
+                      <div class="hover-box"> <a class="zoom">
+                        <i rel="{{x._id}}" onclick="showBox(this)" class="fa fa-plus-circle"></i></a> 
+
+                        <a class="page"  target="_blank"  href="{{x.link}}"><i class="fa fa-arrow-circle-right"></i></a> 
+                      </div>
+
+                    </div>
+                  
+
+                    <div class="work-post-content">
+
+                      <h2>{{x.portfolioname}}</h2>
+
+                      <span>{{x.type}} Development</span> 
+
+                    </div>
+                       
+
+
+                  </div>      </div>
 
          </div>     
 
@@ -69,14 +112,7 @@ a.zoom{
 
     
  
-    <script>
-    function showBox(id){
-        document.getElementById(id.getAttribute('rel')).style.display='block';
-    }
-    function hideBox(id){
-        document.getElementById(id.getAttribute('rel')).style.display='none';
-    }
-    </script>
+   
    
        
      <!--<span>end mobile site-->  
@@ -100,9 +136,27 @@ a.zoom{
                         </br>
   </div>
 </div>
-<script type="text/javascript">
-  
-  var $=jQuery.noConflict();$(document).ready(function(e){"use strict";var t=e(window),a=e(".portfolio-container"),i=e(".filter");try{a.imagesLoaded(function(){a.show(),a.isotope({filter:"*",layoutMode:"masonry",animationOptions:{duration:750,easing:"linear"}})})}catch(o){}t.bind("resize",function(){var e=i.find("a.active").attr("data-filter");try{a.isotope({filter:e,animationOptions:{duration:750,easing:"linear",queue:!1}})}catch(t){}return!1}),i.find("a").click(function(){var t=e(this).attr("data-filter");try{a.isotope({filter:t,animationOptions:{duration:750,easing:"linear",queue:!1}})}catch(i){}return!1});var n=e(".filter li a");n.on("click",function(){var t=e(this);t.hasClass("active")||(n.removeClass("active"),t.addClass("active"))});try{e.browserSelector(),e("html").hasClass("chrome")&&e.smoothScroll()}catch(o){}var r=e(".go-top"),s=e("html, body");r.click(function(){return s.animate({scrollTop:0},"slow"),!1});try{var c=e(".flexslider");c.flexslider({animation:"fade",slideshowSpeed:4500})}catch(o){}var l={lat:"51.51152",lon:"-0.104198"};try{var d=e(".map");d.gmap3({action:"addMarker",latLng:[l.lat,l.lon],map:{center:[l.lat,l.lon],zoom:14}},{action:"setOptions",args:[{scrollwheel:!1}]})}catch(o){}try{e(".zoom").magnificPopup({type:"image"})}catch(o){}try{e(".zoom.video").magnificPopup({type:"iframe"})}catch(o){}var v=e("a.accord-link");v.on("click",function(t){t.preventDefault();var a=e(this),i=a.parents(".accord-elem"),o=e(".accord-elem"),n=e(".accord-content");i.hasClass("active")?n.slideUp(400,function(){o.removeClass("active")}):(n.slideUp(400,function(){o.removeClass("active")}),i.find(".accord-content").slideDown(400,function(){i.addClass("active")}))});var f=e(".tab-links li a");f.on("click",function(t){t.preventDefault();var a=e(this),i=a.parent("li").index(),o=e(".tab-content"),n=e(".tab-content:eq("+i+")");a.hasClass("active")||(f.removeClass("active"),a.addClass("active"),o.fadeOut(400),o.removeClass("active"),n.delay(400).fadeIn(400),n.addClass("active"))});var h=e(".bxslider");try{h.bxSlider({mode:"vertical"})}catch(o){}var u=e(".meter > span");u.each(function(){e(this).data("origWidth",e(this).width()).width(0).animate({width:e(this).data("origWidth")},1200)});var m=e("a.accordion-link");m.on("click",function(t){t.preventDefault();var a=e(this).parent("li").find(".accordion-list-content");e(this).hasClass("active")?(e(this).removeClass("active"),a.slideUp(200)):(e(this).addClass("active"),a.slideDown(200))});try{for(var p=100;1e4>=p;p++)e("#start-val").append('<option value="'+p+'">'+p+"</option>");e(".noUiSlider").noUiSlider({range:[0,1600],start:[0,1e3],handles:2,connect:!0,step:1,serialization:{to:[e("#start-val"),e("#end-val")],resolution:1}})}catch(o){}try{e(".carousel").carousel({interval:!1})}catch(o){}var w=e(window).height();e(".home-box").css("height",w),e(window).resize(function(){var t=e(window).height();e(".home-box").css("height",t)});var y=e("#submit_contact"),C=e("#msg");y.on("click",function(t){t.preventDefault();var a=e(this);e.ajax({type:"POST",url:"contact.php",dataType:"json",cache:!1,data:e("#contact-form").serialize(),success:function(e){"error"!==e.info?(a.parents("form").find("input[type=text],textarea,select").filter(":visible").val(""),C.hide().removeClass("success").removeClass("error").addClass("success").html(e.msg).fadeIn("slow").delay(5e3).fadeOut("slow")):C.hide().removeClass("success").removeClass("error").addClass("error").html(e.msg).fadeIn("slow").delay(5e3).fadeOut("slow")}})}),function(){function t(){window.addEventListener("scroll",function(){n||(n=!0,setTimeout(a,250))},!1)}function a(){var t=i();t>=r?e("header, .fixed-link-top").addClass("active"):e("header, .fixed-link-top").removeClass("active"),n=!1}function i(){return window.pageYOffset||o.scrollTop}var o=document.documentElement,n=!1,r=200;document.querySelector("header, .fixed-link-top"),t()}()});
-</script>
 
-<!-- End content -->
+
+<script type="text/javascript">
+var $=jQuery.noConflict();
+$(document).ready(function(){
+ 
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+        
+        if(value == "all")
+        {
+           
+            $('.filter').show('1000');
+        }
+        else
+        {      
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+            
+        }
+    });
+ 
+});
+</script>

@@ -24,80 +24,26 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
 
-
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.migrate.js"></script>
 	<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 	<script type="text/javascript" src="js/raphael-min.js"></script>
 	<script type="text/javascript" src="js/DevSolutionSkill.min.js"></script>
 	<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+
 	<script type="text/javascript" src="js/plugins-scroll.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script type="text/javascript" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+	
      // <!-- jQuery KenBurn Slider  -->
     <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
       <div id="fb-root"></div>
-      <style>
-        footer {
-     background: #3B3B3B;
-    background-image: initial;
-    background-position-x: initial;
-    background-position-y: initial;
-    background-size: initial;
-    background-repeat-x: initial;
-    background-repeat-y: initial;
-    background-attachment: initial;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: rgb(59, 59, 59);
-    border-top: 1px solid #e9e9e9;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: rgb(233, 233, 233);
-}
-       
-   h4 {
-    display: block;
-    -webkit-margin-before: 1.33em;
-    -webkit-margin-after: 1.33em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    font-weight: bold;
-}
-.widget.footer-widgets {
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-.footer-widgets {
-    margin-bottom: 40px;
-}
-      </style>
 
-<!-- 	<script>(function(d, s, id) {
-
-      var js, fjs = d.getElementsByTagName(s)[0];
-
-      if (d.getElementById(id)) return;
-
-      js = d.createElement(s); js.id = id;
-
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-
-      fjs.parentNode.insertBefore(js, fjs);
-
-    }(document, 'script', 'facebook-jssdk'));
-
-    </script>
- -->
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	
 </head>
 <body ng-app="webApp" >
@@ -145,7 +91,7 @@
 
         
         
-        <div class="main" ui-view=""></div>
+        <div class="main" ui-view="" autoscroll="true"></div>
       	<!-- footer 
 
 			================================================== -->
@@ -333,7 +279,7 @@
 
 
 	</div>
-		<script type="text/javascript" src="js/main.js"></script>
+		
 	<script>
 
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -359,6 +305,7 @@
 	<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
 
   	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+  	<script type="text/javascript" src="js/main.js"></script>
 
 </body>
 

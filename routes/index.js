@@ -11,14 +11,15 @@ var url = 'mongodb://127.0.0.1:27017/sbsdata';
 /* GET home page. */
 //var smtpTransport = require('nodemailer-smtp-transport');
 
+var transporter = nodemailer.createTransport("smtps://surbhij.sbsgroup@gmail.com:"+encodeURIComponent('9993345249') + "@smtp.gmail.com:465"); 
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'surbhij.sbsgroup@gmail.com',
-    pass: '9993345249'
-  }
-});
+// var transporter = nodemailer.createTransport("SMTP",{
+//   service: 'gmail',
+//   auth: {
+//     user: 'surbhij.sbsgroup@gmail.com',
+//     pass: '9993345249'
+//   }
+// });
 
 
 router.get('/', function(req, res, next) {
@@ -84,7 +85,7 @@ MongoClient.connect(url,function(err,db){
 });
 
 router.post('/sendmail',function(req,res,next){
-   console.log("gdjs");
+   console.log(req.body.email);
 
 	var mailOptions = {
     from: req.body.email, // sender address

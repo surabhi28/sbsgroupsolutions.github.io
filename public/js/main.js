@@ -1,5 +1,5 @@
-var myApp = angular.module('webApp', ['ui.router']);
-
+ var myApp = angular.module('webApp', ['ui.router']);
+ 
 myApp.config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
 
@@ -216,21 +216,13 @@ myApp.controller('portfolioCtrl',function($scope,$http){
         
         
          $scope.data=response.data;
-              console.log($scope.data);
+              //console.log($scope.data);
          // alert($scope.names[0].clientname);
        })
 
 
-    $scope.show=function(_id){
-       $http.get("http://localhost:3000/get-data/"+_id).then(function(response){
-        //  alert(response);
-        console.log(response.data);
-        $scope.data=response.data;
-    }).error(function(){
-      alert("error ")
-    })
 
-    }
+
 
      $scope.numberOfPages = function() 
      {
@@ -243,10 +235,17 @@ myApp.controller('portfolioCtrl',function($scope,$http){
 
 myApp.controller('contactCtrl',function($scope,$http,$state){
   
-$scope.submit=function(){     
+$scope.submit=function(){   
+
+  var Data={
+    name:$scope.name,
+    email:$scope.email,
+    message:$scope.message
+      }  
         $http( {
             method: 'POST',
             url: 'http://localhost:3000/sendmail', 
+            data: JSON.stringify(Data)
            
         }).then(function (response) {
                alert("mail sent")
@@ -259,7 +258,5 @@ $scope.submit=function(){
     });
   };
 });
-
-
 
 

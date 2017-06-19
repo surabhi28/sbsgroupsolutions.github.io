@@ -97,3 +97,93 @@ transform: scale(1);
 color: #fff;
 background: #00adef;
 }
+
+        footer {
+     background: #3B3B3B;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(59, 59, 59);
+    border-top: 1px solid #e9e9e9;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(233, 233, 233);
+}
+       
+   h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+.widget.footer-widgets {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.footer-widgets {
+    margin-bottom: 40px;
+}
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.row-fluid{
+     white-space: nowrap;
+      overflow: auto;
+      float: right;
+}
+.row-fluid .col-md-4{
+     display: inline-block;
+     float: none;
+}
+
+ 
+  ul#pager li {
+    display:inline;
+}
+ul#pager button{
+  border: none; background-color: #00ADEF;  border-radius: 3px;
+  height: 25px;width: 25px;
+}
