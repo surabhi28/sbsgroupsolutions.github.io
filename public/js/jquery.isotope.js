@@ -11,7 +11,7 @@
 
 /*jshint asi: true, browser: true, curly: true, eqeqeq: true, forin: false, immed: false, newcap: true, noempty: true, strict: true, undef: true */
 /*global jQuery: false */
-
+var $=jQuery.noConflict();
 (function( window, $, undefined ){
 
   'use strict';
@@ -329,7 +329,7 @@
 
   $.Isotope.settings = {
     resizable: true,
-    layoutMode : 'masonry',
+    layoutMode : 'fitRows',
     containerClass : 'isotope',
     itemClass : 'isotope-item',
     hiddenClass : 'isotope-hidden',

@@ -1,4 +1,4 @@
- var myApp = angular.module('webApp', ['ui.router']);
+ var myApp = angular.module('webApp', ['ui.router','ui.bootstrap','iso.directives']);
  
 myApp.config(['$stateProvider', '$urlRouterProvider',
             function ($stateProvider, $urlRouterProvider) {
@@ -153,6 +153,10 @@ myApp.controller('mainCtrl',function($scope,$http){
       current: null
     };
     
+
+  $scope.myInterval = 3000;
+  $scope.noWrapSlides = false;
+  $scope.active = 0;
   
   $http.get('/get-mainData').then(function(response){
 

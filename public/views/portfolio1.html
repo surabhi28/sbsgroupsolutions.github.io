@@ -5,7 +5,7 @@ a.zoom{
   right:50%;margin-right:30px
   }
 
-.filter-button
+.btn-default
 {
     font-size: 18px;
     color:#7E7E7E;
@@ -13,7 +13,7 @@ a.zoom{
     text-align: center;
     
 }
-.filter-button:hover
+.btn-default:hover
 {
     font-size: 18px;
     /*border: 1px solid #42B32F;
@@ -23,7 +23,7 @@ a.zoom{
     background-color: #00ADEF;
  
 }
-.filter-button.active
+.btn-default.active
 {
     background-color: #00ADEF;
     color: white;
@@ -59,18 +59,73 @@ ul li{
 </div>
 <div class="portfolio-box with-4-col" >
   <div class="container">
+    
+
+        <ul class="btn-group" opt-kind ok-key="filter" >
+              <li><a type='button' class='btn btn-default active ' ok-sel="*"><i class="fa fa-th"></i>Show All</a></li>
+              <li><a type='button' class='btn btn-default' ok-sel=".website">website</a></li>
+              <li><a type='button' class='btn btn-default' ok-sel=".android">android</a></li>
+              <li><a type='button' class='btn btn-default' ok-sel=".mobile">mobile</a></li>
+               <li><a type='button' class='btn btn-default' ok-sel=".ios">ios</a></li>
+             
+            </ul>
 
 
-
-   <ul>
-            <li><a class="btn btn-default filter-button active" data-filter="all"><i class="fa fa-th"></i> Show All</a></li>
-            <li><a class="btn btn-default filter-button" data-filter="website">WEBSITE</a></li>
-            <li><a class="btn btn-default filter-button" data-filter="android">ANDROID APP</a></li>
-            <li><a class="btn btn-default filter-button" data-filter="mobile">MOBILE APP</a></li>
-            <li><a class="btn btn-default filter-button" data-filter="ios">IOS APP</a></li>
-        </ul>
         </br>
-   <div class="portfolio-container" ng-repeat="x in data | pagination: curPage * pageSize | limitTo: pageSize">
+
+      
+          <div id="isotopeContainer" isotope-container class="portfolio-container" >
+            <div ng-repeat="x in data | pagination: curPage * pageSize | limitTo: pageSize" >
+
+             <div  isotope-item class="kindling {{x.type}} ">
+                    
+                
+                   <div class=" work-post">
+                
+                    <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.imagename}}">
+
+                      <div class="hover-box"> <a class="zoom">
+                        <i rel="{{x._id}}" onclick="showBox(this)" class="fa fa-plus-circle"></i></a> 
+
+                        <a class="page"  target="_blank"  href="{{x.link}}"><i class="fa fa-arrow-circle-right"></i></a> 
+                      </div>
+
+                    </div>
+                  
+
+                    <div class="work-post-content">
+
+                      <h2>{{x.portfolioname}}</h2>
+
+                      
+
+                    </div>
+                    </div>
+                 
+                       
+
+
+                  </div> 
+
+
+                <div id="{{x._id}}" style="margin-top: 30px; " class="w3-modal">
+                   <div class="w3-modal-content">
+                   <div class="w3-container" style="background: black;">
+                     <span rel="{{x._id}}" onclick="hideBox(this)" class="w3-button w3-display-topright">&times;</span>
+                      <img src="{{x.imagepath}}{{x.fullimagename}}">
+                  </div>
+                 </div>
+                </div> 
+            </div>
+
+      
+      
+
+     
+      </div>
+
+        <!-- 
+   <div class="portfolio-container" isotope-container ng-repeat="x in data | pagination: curPage * pageSize | limitTo: pageSize">
 
                 <div id="{{x._id}}" style="margin-top: 30px;" class="w3-modal">
                    <div class="w3-modal-content">
@@ -81,7 +136,7 @@ ul li{
                  </div>
                 </div>
 
-                  <div class="filter {{x.type}} work-post col-lg-4 col-md-4 col-sm-4">
+                  <div class="filter {{x.type}} work-post col-lg-4 col-md-4 col-sm-4" isotope-item>
 
                     <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.imagename}}">
 
@@ -104,7 +159,7 @@ ul li{
                        
 
 
-                  </div>      </div>
+                  </div>      </div> -->
 
          </div>     
 
@@ -137,7 +192,13 @@ ul li{
   </div>
 </div>
 
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 
+ 
+  <script src="js/jquery.isotope.js"></script>
+  <script src="js/angular-isotope.js"></script>
+
+<!-- 
 <script type="text/javascript">
 var $=jQuery.noConflict();
 $(document).ready(function(){
@@ -159,4 +220,4 @@ $(document).ready(function(){
     });
  
 });
-</script>
+</script> -->

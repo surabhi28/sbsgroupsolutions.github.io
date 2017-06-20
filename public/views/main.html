@@ -396,51 +396,20 @@ the success of our customers. We always look to press on the demanding conventio
 
     </div>
 
-
-<div class="container">
-
-<div id="myCaro" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <!-- <ol class="carousel-indicators">
-        <li data-target="#myCaro" ng-repeat="test in tests" ng-class="{active: ($index === 0)}" data-slide-to="$index"></li>
-      </ol> -->
-     <!--   <ol class="carousel-indicators">
-      <li data-target="#myCaro" data-slide-to="0" class="active"></li>
-      <li data-target="#myCaro" data-slide-to="1"></li>
-      <li data-target="#myCaro" data-slide-to="2"></li>
-      <li data-target="#myCaro" data-slide-to="3"></li>
-      <li data-target="#myCaro" data-slide-to="4"></li>
-    </ol> -->
-      <ul class="carousel-inner">
-        <li ng-class="{item: true, active: ($index === 0)}" ng-repeat="test in tests">
-         <div class="message-content" style="padding: 20px 40px;">
+     <uib-carousel interval="myInterval">
+            <uib-slide ng-repeat="test in tests" active="active" index="$index">
+              <div class="message-content" style="padding: 20px 40px;">
                                
             <p> {{test.testimonial}}</p>
 
            <div class="rating"><h6 class="client-name">{{test.clientname}}</h6></div>
 
           </div>
-
-          
-        </li>
-      </ul>
-      
-     
-     
-    </div>
-     <ul id="pager" style="margin-top: 15px">
-                                <li>
-                                    <button href="#myCaro" data-slide="prev" ><i class="fa fa-angle-left"  style="color: white;" aria-hidden="true"></i></button>
-                                </li>
-                                
-                                <li>
-                                    <button href="#myCaro" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true" style="color:white;"></i> </button>
-                                </li>
-                            </ul>
+            </uib-slide>
+      </uib-carousel>
 
 
-   
-  </div>
+
 </div>
 
 
@@ -459,7 +428,7 @@ the success of our customers. We always look to press on the demanding conventio
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-          <!-- Wrapper for slides -->
+         
 
           <div class="carousel-inner">
 
@@ -514,7 +483,7 @@ the success of our customers. We always look to press on the demanding conventio
                                 </li>
                             </ul>
 
-       <!-- Controls -->
+
 
         
 
@@ -577,18 +546,12 @@ the success of our customers. We always look to press on the demanding conventio
       <div class="recent-works">
 
         <h3>LATEST PROJECTS</h3>
+         
 
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+         
 
-          <!-- Wrapper for slides -->
-
-          <div class="carousel-inner">
-
-            <div class="item active">
-            <div class="row-fluid">
-               
-        
-              <div class="col-md-4"  ng-repeat="x in ports">
+          <uib-carousel interval="myInterval">
+            <uib-slide ng-repeat="x in ports" active="active" index="$index">
 
                 <div id="{{x._id}}" class="w3-modal">
                    <div class="w3-modal-content">
@@ -598,8 +561,7 @@ the success of our customers. We always look to press on the demanding conventio
                   </div>
                  </div>
                 </div>
-
-                  <div class="work-post">
+                   <div class="work-post col-md-4">
 
                     <div class="work-post-gal"> <img alt="" src="{{x.imagepath}}{{x.imagename}}">
 
@@ -623,34 +585,64 @@ the success of our customers. We always look to press on the demanding conventio
 
 
                   </div>
+                  <div class="work-post col-md-4">
 
+                    <div class="work-post-gal"> <img alt="" src="{{ports[$index+1].imagepath}}{{ports[$index+1].imagename}}">
+
+                      <div class="hover-box"> <a class="zoom">
+                        <i rel="{{ports[$index+1]._id}}" onclick="showBox(this)" class="fa fa-plus-circle"></i></a> 
+
+                        <a class="page"  target="_blank"  href="{{ports[$index+1].link}}"><i class="fa fa-arrow-circle-right"></i></a> 
+                      </div>
+
+                    </div>
                   
 
-                  </div>
-                
+                    <div class="work-post-content">
 
-                                             
+                      <h2>{{ports[$index+1].portfolioname}}</h2>
 
-                   </div>
+                      <span>{{ports[$index+1].type}} Development</span> 
 
-                </div>
+                    </div>
                        
-                </div>
-                      
-                      
 
-          <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"></a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"></a> 
-    
-                    
-                </div>
+
+                  </div>
+                   <div class="work-post col-md-4">
+
+                    <div class="work-post-gal"> <img alt="" src="{{ports[$index+2].imagepath}}{{ports[$index+2].imagename}}">
+
+                      <div class="hover-box"> <a class="zoom">
+                        <i rel="{{ports[$index+2]._id}}" onclick="showBox(this)" class="fa fa-plus-circle"></i></a> 
+
+                        <a class="page"  target="_blank"  href="{{ports[$index+2].link}}"><i class="fa fa-arrow-circle-right"></i></a> 
+                      </div>
+
+                    </div>
+                  
+
+                    <div class="work-post-content">
+
+                      <h2>{{ports[$index+2].portfolioname}}</h2>
+
+                      <span>{{ports[$index+2].type}} Development</span> 
+
+                    </div>
+                       
+
+
+                  </div>
+                  
+              </uib-slide>
+          </uib-carousel>
+
 
        
               </div>
             
 
-<!--      
-           </div>
- -->
+
       </div>
 
 
@@ -774,3 +766,8 @@ for (i = 0; i < acc.length; i++) {
   }
 }
 </script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+
+ 
+  <script src="js/jquery.isotope.js"></script>
+  <script src="js/angular-isotope.js"></script>

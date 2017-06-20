@@ -168,13 +168,12 @@ div.panel {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-
 .row-fluid{
      white-space: nowrap;
       overflow: auto;
       float: right;
 }
-.row-fluid .col-md-4{
+.row-fluid .col-md-3{
      display: inline-block;
      float: none;
 }

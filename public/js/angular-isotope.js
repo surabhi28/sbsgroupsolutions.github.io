@@ -1,3 +1,6 @@
+
+var $=jQuery.noConflict();
+
 (function(window, document) {
 
 // Create all modules and define dependencies to make sure they exist
